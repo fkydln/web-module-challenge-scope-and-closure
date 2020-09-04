@@ -27,11 +27,12 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Counter1 returns another counter which increases the value of count variable by 1. On the other hand,
+ * counter 2 will directly increase the value of count variable by 1 without returning a function. That's interesting. Eventually they both do the same job.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter1 uses a closure, because it passes arguments to outer function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * that's a good question, idk that "YET".
 */
 
 // counter1 code
@@ -59,8 +60,10 @@ Write a function called `inning` that returns a random number of points that a t
 function inning(/*Code Here*/){
 
     /*Code Here*/
+    return console.log( Math.floor(Math.random()*3));
 
 }
+inning();
 
 /* Task 3: finalScore()
 
@@ -76,11 +79,16 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning, number){
+  let home;
+  let away;
+ for (let i = 0; i < number; i++) {
+  home = home + inning();
+ }
+ return console.log(home);
 }
+finalScore(inning,9);
+
 
 /* Task 4: 
 
@@ -105,6 +113,8 @@ Final Score: awayTeam - homeTeam */
 
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
+
+  return
 }
 
 
